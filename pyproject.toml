@@ -1,6 +1,10 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "statscalculation"
-version = "0.0.1"
+version = "0.1.0"
 authors = [
   { name="jaz-may", email="3352943249qw@gmail.com" },
 ]
@@ -15,11 +19,10 @@ classifiers = [
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+[project.scripts]
+anova = "statscalculation.anova:main"
 
 [project.urls]
-Homepage = "https://github.com/jaz-may"
-Issues = "https://github.com/jaz-may/statscalculation"
+Homepage = "https://github.com/jaz-may/statscalculation"
+Issues = "https://github.com/jaz-may/statscalculation/issues"
 

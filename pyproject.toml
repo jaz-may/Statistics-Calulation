@@ -1,0 +1,25 @@
+[project]
+name = "statscalculation"
+version = "0.0.1"
+authors = [
+  { name="jaz-may", email="3352943249qw@gmail.com" },
+]
+description = "This package is used for mathematical statistical calculation"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["scipy>=1.0"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.urls]
+Homepage = "https://github.com/jaz-may"
+Issues = "https://github.com/jaz-may/statscalculation"
+

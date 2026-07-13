@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "statscalculation"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
   { name="jaz-may", email="3352943249qw@gmail.com" },
 ]
@@ -20,7 +20,7 @@ license = "MIT"
 license-files = ["LICEN[CS]E*"]
 
 [project.scripts]
-stats = "statscalculation.cli:main"
+stat = "statscalculation.cli:main"
 anova = "statscalculation.anova:main"
 
 [project.urls]

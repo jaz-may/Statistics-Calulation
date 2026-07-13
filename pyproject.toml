@@ -11,7 +11,7 @@ authors = [
 description = "This package is used for mathematical statistical calculation"
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = ["scipy>=1.0"]
+dependencies = ["scipy>=1.7.0"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
@@ -20,6 +20,7 @@ license = "MIT"
 license-files = ["LICEN[CS]E*"]
 
 [project.scripts]
+stats = "statscalculation.cli:main"
 anova = "statscalculation.anova:main"
 
 [project.urls]

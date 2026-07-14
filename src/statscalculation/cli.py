@@ -95,11 +95,11 @@ def main():
     # 构建 argparse，动态注册已实现工具为子命令
     parser = argparse.ArgumentParser(
         prog="stats",
-        description="statscalculation — interactive calclulator designed for statistics",
+        description="statscalculation — interactive calculator designed for statistics",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 
-    sub = parser.add_subparsers(dest="command", title="子命令")
+    sub = parser.add_subparsers(dest="command", title="subcommands")
 
     done_tools = {k: v for k, v in TOOLS.items() if v[2] == "done"}
     for name, (desc, _, _) in done_tools.items():

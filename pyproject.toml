@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "statscalculation"
-version = "0.1.1"
+version = "0.1.2"
 authors = [
   { name="jaz-may", email="3352943249qw@gmail.com" },
 ]
@@ -22,6 +22,7 @@ license-files = ["LICEN[CS]E*"]
 [project.scripts]
 stat = "statscalculation.cli:main"
 anova = "statscalculation.anova:main"
+ttest = "statscalculation.ttest:main"
 
 [project.urls]
 Homepage = "https://github.com/jaz-may/statscalculation"

@@ -1,5 +1,10 @@
+"""
+    1.anova F test
+    2.HSD的计算
+"""
+
 from scipy.stats import f
-from statscalculation.cli_utils import int_input, float_input, float_list_input
+from statscalculation.cli_utils import int_input, float_input, float_list_input, yes_or_not_input, group_data_input
 
 def HSD(alpha: float, k: int, v: int, r: int, MSE: float, means: list[float]) -> str:
     """
@@ -24,7 +29,7 @@ def HSD(alpha: float, k: int, v: int, r: int, MSE: float, means: list[float]) ->
             lower_bound, upper_bound = means[i] - means[j] - D, means[i] - means[j] + D
             diff = "not significantly different" if (lower_bound <= 0 <= upper_bound) else "significantly different"
             print(f"group{i} vs group{j} Tukey's HSD: ({lower_bound}, {upper_bound}) -> {diff}")
-        print("HSD ends")
+    print("HSD ends")
     return 
 
 def main():
@@ -33,43 +38,11 @@ def main():
     #Treatment      k-1     SSTR    MSTR  MSTR/MSE
     #Error          n-k      SSE     MSE 
     #Total          n-1    SSTOT 
-
-    
     """
     # 数据输入
-    alpha = float_input("Please enter the significance level:")
-    k = int_input("Please enter the number of groups:")
-    data = {}
-    print("Please enter the data for each group, figures should be split by space!")
-    for i in range(k):
-        data[f"group{i}"] = float_list_input(f"group{i}:")
+    group_data = group_data_input()
+    alpha, k, data = group_data["alpha"], group_data["k"], group_data["data"]   # 一类错误（float）, 组数（int）, 各组数据（dict）
 
-    # 数据检查
-    print("\nCheck the correctness of the data\n")
-    for key, group in data.items():
-        print(key, ":", group)
-
-    # 数据更改
-    flag = input("Do you need to correct the data? (Y/N)\n").lower()
-
-    if flag == "y" or flag == "yes":
-        print("If you want to change the second number in group0, then type:0, 15: 9\n" \
-                    "0 here means group0, 1 means the second number while 9 stands for the correct data.")
-        
-        while flag == "y" or flag == "yes":
-            coord, num = input().split(":")
-            try:
-                num = float(num)
-                x, y = [int(_) for _ in coord.split(",")][0], [int(_) for _ in coord.split(",")][1] 
-                data[f'group{x}'][y] = num
-            except:
-                print("Input is not in the proper format!")
-            flag = input("Still something wrong with it? (Y/N)\n").lower()
-
-        print("\nAlright, the followings are the final data")
-        for key, group in data.items():
-            print(key, ":", group)
-    
     # 新产生数据
     n = 0                           # the number of the whole data
     total = 0                       # sum of the whole data

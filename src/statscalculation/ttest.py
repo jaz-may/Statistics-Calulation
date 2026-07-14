@@ -1,7 +1,9 @@
+"""
+    two sample test
+"""
 from statscalculation.cli_utils import int_input, float_input, float_list_input, yes_or_not_input, group_data_input, get_sample_variance
 from math import sqrt
 from scipy.stats import norm, t as t_dist
-
 
 def test_table(stat, crit_alpha, crit_half, dist="z", df=None) -> None:
     """

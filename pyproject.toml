@@ -22,7 +22,7 @@ license-files = ["LICEN[CS]E*"]
 [project.scripts]
 stat = "statscalculation.cli:main"
 anova = "statscalculation.anova:main"
-ttest = "statscalculation.ttest:main"
+ttest = "statscalculation.two_sample_test:main"
 
 [project.urls]
 Homepage = "https://github.com/jaz-may/statscalculation"

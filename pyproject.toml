@@ -4,14 +4,14 @@ build-backend = "hatchling.build"
 
 [project]
 name = "statscalculation"
-version = "0.1.0"
+version = "0.1.2"
 authors = [
   { name="jaz-may", email="3352943249qw@gmail.com" },
 ]
 description = "This package is used for mathematical statistical calculation"
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = ["scipy>=1.0"]
+dependencies = ["scipy>=1.7.0"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
@@ -20,7 +20,9 @@ license = "MIT"
 license-files = ["LICEN[CS]E*"]
 
 [project.scripts]
+stat = "statscalculation.cli:main"
 anova = "statscalculation.anova:main"
+ttest = "statscalculation.ttest:main"
 
 [project.urls]
 Homepage = "https://github.com/jaz-may/statscalculation"

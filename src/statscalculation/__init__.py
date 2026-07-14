@@ -1,6 +1,6 @@
 """
-statscalculation - 数理统计计算器，命令行工具
+statscalculation - an interactive CLI calculator for mathematical statistics
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 __author__ = "jaz-may"
